@@ -1,25 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6bU-iV-wKN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--More Info-->
+        <scene sceneID="nYG-nL-axD">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="eGN-L9-LnU" customClass="MoreInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="8pR-nZ-gWh"/>
+                        <viewControllerLayoutGuide type="bottom" id="GYS-ll-w3t"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Xk5-oX-QpY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="More Info" id="AOn-c7-cPV"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GB8-6R-xI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="715" y="832"/>
+        </scene>
+        <!--Bike Share Location-->
+        <scene sceneID="AYQ-7t-Wxo">
+            <objects>
+                <viewController id="YX9-Dm-WCa" customClass="BikeShareViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dMS-vM-7cr"/>
+                        <viewControllerLayoutGuide type="bottom" id="T1k-RH-4XM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qV3-e4-9FO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-yx-rPS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T1k-RH-4XM" firstAttribute="top" secondItem="aHa-yx-rPS" secondAttribute="bottom" id="7TU-VD-Jud"/>
+                            <constraint firstItem="aHa-yx-rPS" firstAttribute="top" secondItem="qV3-e4-9FO" secondAttribute="topMargin" id="S52-Qh-O45"/>
+                            <constraint firstItem="aHa-yx-rPS" firstAttribute="leading" secondItem="qV3-e4-9FO" secondAttribute="leadingMargin" constant="-16" id="VZg-9d-jwX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aHa-yx-rPS" secondAttribute="trailing" constant="-16" id="eWw-HY-5WW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bike Share Location" id="kbT-tQ-VZa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AaX-G4-SDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="715" y="170"/>
+        </scene>
+        <!--Bike Share-->
+        <scene sceneID="5F4-Lk-o05">
+            <objects>
+                <tabBarController title="Bike Share" id="6bU-iV-wKN" customClass="MapViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="dE8-EB-gnI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YX9-Dm-WCa" kind="relationship" relationship="viewControllers" id="rVX-Bo-bZ2"/>
+                        <segue destination="eGN-L9-LnU" kind="relationship" relationship="viewControllers" id="QAE-QC-aSe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfA-WH-ny6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-105" y="501"/>
         </scene>
     </scenes>
 </document>

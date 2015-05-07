@@ -1,15 +1,14 @@
 //
-//  ViewController.h
+//  BikeShareLocation.m
 //  BikeShareInterfaceBuilder
 //
 //  Created by Yung Dai on 2015-05-06.
 //  Copyright (c) 2015 Yung Dai. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BikeShareLocation.h"
 
-@interface ViewController : UIViewController
 
+@implementation BikeShareLocation
 
 @end
-

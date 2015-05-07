@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
+#import <MapKit/MapKit.h>
+#import "MoreInfoViewController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 @end
 
