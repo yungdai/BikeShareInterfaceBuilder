@@ -1,44 +1,22 @@
 //
-//  MapViewController.m
+//  ViewController.m
 //  BikeShareInterfaceBuilder
 //
-//  Created by Yung Dai on 2015-05-06.
+//  Created by Yung Dai on 2015-05-08.
 //  Copyright (c) 2015 Yung Dai. All rights reserved.
 //
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
-
+@interface ViewController ()
 
 @end
 
-@implementation MapViewController
-
-{
-    NSDictionary *mapLaunchOptions;
-    
-}
-
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-        // sety the default mapping launch option as walking instead of driving
-        mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
-    }
-    return self;
-}
-
-
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mapView.mapType = MKMapTypeStandard;
-    // init the bikeShareLocationManager location setup
-    self.bikeLocationManager = [[BikeShareLocationManager alloc]init];
+    // Do any additional setup after loading the view.
     
     // start updating my location
     [self.locationManager startUpdatingLocation];
@@ -53,8 +31,11 @@
     self.locationManager.distanceFilter = kCLLocationAccuracyKilometer;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
+    // init the bikeShareLocationManager location setup
+    self.bikeLocationManager = [[BikeShareLocationManager alloc]init];
     
     //  plot the location of all the bikeShareLocations
+    
     [self.bikeLocationManager getBikeShareLocationsOnSucess:^(NSArray *locations) {
         
         for (BikeShareLocation *location in locations)
@@ -64,14 +45,12 @@
         }
         
     }];
+    
+}
 
-    
-    self.mapView.showsUserLocation = YES;
-    self.mapView.showsPointsOfInterest = YES;
-    
-
-    
-    
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 
@@ -83,6 +62,7 @@
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem *mapitem = [[MKMapItem alloc] initWithPlacemark:placemark];
     mapitem.name = annotation.title;
+    NSDictionary *mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
     [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }
 
@@ -133,5 +113,15 @@
     
     return bikeShareAnnotation;
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
