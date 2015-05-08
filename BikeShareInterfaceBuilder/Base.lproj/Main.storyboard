@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xvt-6e-4Tz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xvt-6e-4Tz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--More Info-->
         <scene sceneID="YrT-iL-1dI">
             <objects>
                 <viewController id="yFr-ff-jAv" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="yng-st-dC9"/>
+                    <tabBarItem key="tabBarItem" title="More Info" image="info" id="yng-st-dC9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt0-wy-fvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,7 +27,7 @@
         <!--BIke Shares-->
         <scene sceneID="3ia-jU-K55">
             <objects>
-                <viewController id="kcX-3j-XTu" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="kcX-3j-XTu" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IdA-x9-Pog"/>
                         <viewControllerLayoutGuide type="bottom" id="nLc-Sp-sxt"/>
@@ -39,7 +39,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1M-QP-dZc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <connections>
-                                    <outlet property="delegate" destination="kcX-3j-XTu" id="Z50-Ie-beO"/>
+                                    <outlet property="delegate" destination="kcX-3j-XTu" id="8sJ-g9-lJ7"/>
                                 </connections>
                             </mapView>
                         </subviews>
@@ -52,6 +52,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="BIke Shares" image="cycle_bike" id="sUW-Qg-NvH"/>
+                    <connections>
+                        <outlet property="mapView" destination="r1M-QP-dZc" id="nz6-F6-zdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cew-vr-Dvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,5 +82,6 @@
     </scenes>
     <resources>
         <image name="cycle_bike" width="30" height="28"/>
+        <image name="info" width="28" height="28"/>
     </resources>
 </document>
