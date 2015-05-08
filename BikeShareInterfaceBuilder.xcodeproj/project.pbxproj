@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A3A43B31AFC507B004CB481 /* BikeStationMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A43B21AFC507B004CB481 /* BikeStationMKMapView.m */; };
 		1AFB5D661AFB0D27004C4083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB5D651AFB0D27004C4083 /* main.m */; };
 		1AFB5D691AFB0D27004C4083 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB5D681AFB0D27004C4083 /* AppDelegate.m */; };
 		1AFB5D6F1AFB0D27004C4083 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFB5D6D1AFB0D27004C4083 /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A3A43B11AFC507B004CB481 /* BikeStationMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeStationMKMapView.h; sourceTree = "<group>"; };
+		1A3A43B21AFC507B004CB481 /* BikeStationMKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeStationMKMapView.m; sourceTree = "<group>"; };
 		1AFB5D601AFB0D27004C4083 /* BikeShareInterfaceBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeShareInterfaceBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFB5D641AFB0D27004C4083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AFB5D651AFB0D27004C4083 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				1AFB5D961AFB0FF0004C4083 /* BikeShareLocation.m */,
 				1AFB5D981AFB1061004C4083 /* BikeShareLocationManager.h */,
 				1AFB5D991AFB1061004C4083 /* BikeShareLocationManager.m */,
+				1A3A43B11AFC507B004CB481 /* BikeStationMKMapView.h */,
+				1A3A43B21AFC507B004CB481 /* BikeStationMKMapView.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				1AFB5DAC1AFB1586004C4083 /* MapViewController.m in Sources */,
 				1AFB5D9A1AFB1061004C4083 /* BikeShareLocationManager.m in Sources */,
 				1AFB5D911AFB0F47004C4083 /* HTTPCommunication.m in Sources */,
+				1A3A43B31AFC507B004CB481 /* BikeStationMKMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +472,7 @@
 				1AFB5D851AFB0D27004C4083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AFB5D861AFB0D27004C4083 /* Build configuration list for PBXNativeTarget "BikeShareInterfaceBuilderTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				1AFB5D881AFB0D27004C4083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

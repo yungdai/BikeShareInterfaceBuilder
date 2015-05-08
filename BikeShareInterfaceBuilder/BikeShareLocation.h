@@ -14,10 +14,17 @@
 // Center latitude and longitude of the annotation view.
 // The implementation of this property must be KVO compliant.
 @property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
-// title will be equal to the stationName
+
+// this two optional properties set the CallOut title/subtitle
 @property (nonatomic, readwrite, copy) NSString *title;
-// subtitle will be equal to the availablebikes
 @property (nonatomic, readwrite, copy) NSString *subtitle;
+
+// additional information about the bike share location
+@property (nonatomic, readwrite, copy) NSNumber *availableDocks;
+@property (nonatomic, readwrite, copy) NSNumber *totalDocks;
+@property (nonatomic, readwrite, copy) NSNumber *availableBikes;
+@property (nonatomic, readwrite, copy) NSString *stationName;
+
 
 
 @end

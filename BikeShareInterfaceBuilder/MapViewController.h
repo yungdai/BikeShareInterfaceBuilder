@@ -11,8 +11,16 @@
 #import "BikeShareLocation.h"
 #import "BikeShareLocationManager.h"
 #import "HTTPCommunication.h"
+#import "BikeStationMKMapView.h"
 
 
-@interface MapViewController : UITabBarController
+// check to see if the iOS is 8.0 or higher
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+@interface MapViewController : UITabBarController<MKMapViewDelegate, CLLocationManagerDelegate>
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) BikeShareLocationManager *bikeLocationManager;
 
 @end
