@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "BikeShareLocation.h"
 #import "BikeShareLocationManager.h"
 #import "HTTPCommunication.h"
-#import "BikeStationMKMapView.h"
-#import <CoreLocation/CoreLocation.h>
+#import "MoreInfoViewController.h"
 
 // check to see if the iOS is 8.0 or higher
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-@interface ViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
+@interface MapViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;

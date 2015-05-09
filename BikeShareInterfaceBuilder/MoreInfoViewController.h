@@ -6,8 +6,14 @@
 //  Copyright (c) 2015 Yung Dai. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface MoreInfoViewController : UIViewController
+#import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "BikeShareLocation.h"
+
+@interface MoreInfoViewController : UITabBarController
+@property (strong, nonatomic) id<MKAnnotation> bikeStationData;
+@property (strong, nonatomic) NSString *string;
+@property (strong, nonatomic) IBOutlet UILabel *moreInformationLabel;
 
 @end

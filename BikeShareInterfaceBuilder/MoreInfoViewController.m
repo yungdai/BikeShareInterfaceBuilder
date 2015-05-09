@@ -17,6 +17,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    CGRect top = self.view.bounds;
+    self.moreInformationLabel = [[UILabel alloc]initWithFrame:CGRectInset(top, 0, 0)];
+    self.moreInformationLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight |UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+    self.moreInformationLabel.textAlignment = NSTextAlignmentCenter;
+    self.moreInformationLabel.text = [NSString stringWithFormat: @"Youre data: %@", self.string];
+    
+    
+    [self.view addSubview:self.moreInformationLabel];
+    
+}
+
+
+
+- (NSMutableArray *)parseAnnotationObject:(id<MKAnnotation>)annotation {
+    
+    
+    
+    
+    NSMutableArray *moreInfoText = [NSMutableArray new];
+    
+    BikeShareLocation *bikeShareLocation = [BikeShareLocation new];
+    NSString *stationName = bikeShareLocation.stationName;
+    NSNumber *availableDocks = bikeShareLocation.availableDocks;
+    NSNumber *availableBikes = bikeShareLocation.availableBikes;
+    NSNumber *totalDocks = bikeShareLocation.totalDocks;
+    [moreInfoText addObject:bikeShareLocation];
+    
+    return  moreInfoText;
+    
+}
+
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    BikeShareLocation *bikeShareLocationInfo = (BikeShareLocation *)self.bikeStationData;
+    NSString *stationName = bikeShareLocationInfo.stationName;
+    NSNumber *availableDocks = bikeShareLocationInfo.availableDocks;
+    NSNumber *availableBikes = bikeShareLocationInfo.availableBikes;
+    NSNumber *totalDocks = bikeShareLocationInfo.totalDocks;
+    self.moreInformationLabel.text = [NSString stringWithFormat:
+                                      @"Bike Station Name: %@\r Available Bikes: %@", stationName, availableBikes];
+    //    self.moreInformationLabel.text = labelText;
 }
 
 - (void)didReceiveMemoryWarning {

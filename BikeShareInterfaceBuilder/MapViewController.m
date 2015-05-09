@@ -8,19 +8,41 @@
 
 #import "MapViewController.h"
 
-@interface ViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
+{
+    NSDictionary *mapLaunchOptions;
+    
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        // sety the default mapping launch option as walking instead of driving
+        mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.bikeLocationManager = [[BikeShareLocationManager alloc]init];
     
-    // start updating my location
-    [self.locationManager startUpdatingLocation];
+    // draw the map view onto the the screen
+    self.mapView = [[MKMapView alloc]initWithFrame:self.view.frame];
+    //NOTE should look into constraing for this view when I draw it
+    
+    
+    // user location setup
     self.locationManager = [[CLLocationManager alloc]init];
+    
+    // make sure that the user is using iOS 8 or later
     
     if(IS_OS_8_OR_LATER) {
         [self.locationManager requestWhenInUseAuthorization];
@@ -31,11 +53,8 @@
     self.locationManager.distanceFilter = kCLLocationAccuracyKilometer;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    // init the bikeShareLocationManager location setup
-    self.bikeLocationManager = [[BikeShareLocationManager alloc]init];
     
     //  plot the location of all the bikeShareLocations
-    
     [self.bikeLocationManager getBikeShareLocationsOnSucess:^(NSArray *locations) {
         
         for (BikeShareLocation *location in locations)
@@ -46,24 +65,56 @@
         
     }];
     
+    [self.locationManager startUpdatingLocation];
+    
+    
+    
+    self.mapView.showsUserLocation = YES;
+    self.mapView.showsPointsOfInterest = YES;
+    
+    
+    
+    
+    
+    // sets the view controller to be the delegate for the MapView
+    self.mapView.delegate = self;
+    [self.view addSubview:self.mapView];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
 
 
 // when I tap the callout accessory I launch the maps app for that location
+// mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout accessory UIControls
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+    
     id <MKAnnotation> annotation = view.annotation;
     CLLocationCoordinate2D coordinate = [annotation coordinate];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem *mapitem = [[MKMapItem alloc] initWithPlacemark:placemark];
     mapitem.name = annotation.title;
-    NSDictionary *mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
-    [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
+    
+    
+    
+    if (control == view.rightCalloutAccessoryView) {
+        
+        MoreInfoViewController *moreInfoViewController = self.tabBarController.viewControllers[1];
+        
+        moreInfoViewController.bikeStationData = annotation;
+        moreInfoViewController.string = annotation.title;
+        
+        
+        [self.tabBarController setSelectedIndex:1];
+        
+        
+        
+    }
+    
 }
 
 // method to zoom to the current user location
@@ -85,43 +136,50 @@
 
 // method to set custom annotation images
 // Tells the delegate that one or more annotation views were added to the map.
-// By the time this method is called, the specified views are already added to the map.
+// By the time this method is called EACH time an annocation is created
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKAnnotationView *bikeShareAnnotation = (MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"annoView"];
     
-    if([annotation isKindOfClass:[BikeShareLocation class]]) {
-        bikeShareAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annoView"];
-        
+    if([annotation isKindOfClass:[BikeShareLocation class]])
+    {
+        if (bikeShareAnnotation == nil)
+        {
+            bikeShareAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annoView"];
+            bikeShareAnnotation.image = [UIImage imageNamed:@"Bike_Share_Toronto_logo"];
+            bikeShareAnnotation.frame = CGRectMake(0, 0, 45, 30);
+            // Add an image to the left callout.
+            UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Bike_Share_Toronto_logo"]];
+            iconView.frame = CGRectMake(0, 0, 45, 30);
+            bikeShareAnnotation.leftCalloutAccessoryView = iconView;
+            
+            // on the right of my Callout display a UIButton I want a UIButtonTypeDetailDisclosure type
+            bikeShareAnnotation.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            bikeShareAnnotation.canShowCallout = YES;
+            
+            // if you tap the left callout run an action method called didTapOnImageView
+            UITapGestureRecognizer *tapLeftCallOut = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnImageView:)];
+            [bikeShareAnnotation.leftCalloutAccessoryView addGestureRecognizer:tapLeftCallOut];
+            iconView.userInteractionEnabled = YES;
+        }
     }
-    
-    
-    
-    bikeShareAnnotation.image = [UIImage imageNamed:@"Bike_Share_Toronto_logo"];
-    bikeShareAnnotation.frame = CGRectMake(0, 0, 45, 30);
-    bikeShareAnnotation.canShowCallout = YES;
-    
-    // on the right of my Callout display a UIButton
-    bikeShareAnnotation.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    // Add an image to the left callout.
-    UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Bike_Share_Toronto_logo"]];
-    iconView.frame = CGRectMake(0, 0, 45, 30);
-    bikeShareAnnotation.leftCalloutAccessoryView = iconView;
-    
-    
-    
-    
     return bikeShareAnnotation;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//
+- (void)didTapOnImageView:(id)sender
+{
+    id <MKAnnotation> annotation = [self.mapView selectedAnnotations][0];
+    CLLocationCoordinate2D coordinate = [annotation coordinate];
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+    MKMapItem *mapitem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    mapitem.name = annotation.title;
+    [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }
-*/
+
+
+
+
 
 @end

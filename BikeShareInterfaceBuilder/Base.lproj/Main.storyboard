@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xvt-6e-4Tz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xvt-6e-4Tz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--More Info-->
         <scene sceneID="YrT-iL-1dI">
             <objects>
-                <viewController id="yFr-ff-jAv" sceneMemberID="viewController">
+                <viewController id="yFr-ff-jAv" customClass="MoreInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QZ2-dr-ynt"/>
                         <viewControllerLayoutGuide type="bottom" id="KsI-Hw-Azc"/>
@@ -16,9 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="XDB-2E-Mrc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18m-aj-1hD">
+                                <rect key="frame" x="16" y="20" width="568" height="523"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="More Info" image="info" id="yng-st-dC9"/>
+                    <connections>
+                        <outlet property="moreInformationLabel" destination="18m-aj-1hD" id="E2b-Ix-cVc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt0-wy-fvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,7 +38,7 @@
         <!--BIke Shares-->
         <scene sceneID="3ia-jU-K55">
             <objects>
-                <viewController id="kcX-3j-XTu" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="kcX-3j-XTu" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IdA-x9-Pog"/>
                         <viewControllerLayoutGuide type="bottom" id="nLc-Sp-sxt"/>
