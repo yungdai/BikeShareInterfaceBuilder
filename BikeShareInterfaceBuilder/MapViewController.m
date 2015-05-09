@@ -21,7 +21,7 @@
     self.bikeLocationManager = [[BikeShareLocationManager alloc]init];
     
     // draw the map view onto the the screen
-    self.mapView = [[MKMapView alloc]initWithFrame:self.view.frame];
+//    self.mapView = [[MKMapView alloc]initWithFrame:self.view.frame];
     //NOTE should look into constraing for this view when I draw it
     
     
@@ -65,10 +65,14 @@
     // sets the view controller to be the delegate for the MapView
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
+    [self.view addSubview:self.closestButton];
     
     
 }
 
+- (IBAction)closestButtonPressed:(id)sender {
+    
+}
 
 
 
@@ -84,8 +88,6 @@
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem *mapitem = [[MKMapItem alloc] initWithPlacemark:placemark];
     mapitem.name = annotation.title;
-    
-    
     
     if (control == view.rightCalloutAccessoryView) {
         
@@ -147,7 +149,7 @@
 // this method is setup the render to render the map overlay
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
     MKPolylineRenderer *routeLine = [[MKPolylineRenderer alloc]initWithPolyline:self.routeToStation.polyline];
-    routeLine.strokeColor = [UIColor greenColor];
+    routeLine.strokeColor = [UIColor blueColor];
     routeLine.lineWidth = 6;
     return routeLine;
 }
@@ -167,12 +169,12 @@
             bikeShareAnnotation = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annoView"];
             bikeShareAnnotation.image = [UIImage imageNamed:@"Bike_Share_Toronto_logo"];
             bikeShareAnnotation.frame = CGRectMake(0, 0, 45, 30);
+
             // Add an image to the left callout.
             UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Bike_Share_Toronto_logo"]];
             iconView.frame = CGRectMake(0, 0, 75, 55);
-
             bikeShareAnnotation.leftCalloutAccessoryView = iconView;
-            bikeShareAnnotation.leftCalloutAccessoryView.backgroundColor = [UIColor greenColor];
+            bikeShareAnnotation.leftCalloutAccessoryView.backgroundColor = [UIColor blueColor];
     
             
             // on the right of my Callout display a UIButton I want a UIButtonTypeDetailDisclosure type
@@ -200,9 +202,5 @@
     NSDictionary *mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
     [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }
-
-
-
-
 
 @end

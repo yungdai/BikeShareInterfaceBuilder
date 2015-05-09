@@ -23,4 +23,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) BikeShareLocationManager *bikeLocationManager;
 @property MKRoute *routeToStation;
+@property (strong, nonatomic) IBOutlet UIButton *closestButton;
+
+
 @end

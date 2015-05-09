@@ -70,7 +70,7 @@
             iconView.frame = CGRectMake(0, 0, 75, 55);
             
             bikeShareAnnotation.leftCalloutAccessoryView = iconView;
-            bikeShareAnnotation.leftCalloutAccessoryView.backgroundColor = [UIColor greenColor];
+            bikeShareAnnotation.leftCalloutAccessoryView.backgroundColor = [UIColor blueColor];
             
             
             // on the right of my Callout display a UIButton I want a UIButtonTypeDetailDisclosure type
@@ -113,7 +113,7 @@
 // this method is setup the router map overlay
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
     MKPolylineRenderer *routeLine = [[MKPolylineRenderer alloc]initWithPolyline:self.routeToStation.polyline];
-    routeLine.strokeColor = [UIColor greenColor];
+    routeLine.strokeColor = [UIColor blueColor];
     routeLine.lineWidth = 6;
     return routeLine;
 }
@@ -133,9 +133,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     // get the bike station BikeStationLocation Object and assigned it the bikeStationData
-    BikeShareLocation *bikeShareLocationInfo = (BikeShareLocation *)self.bikeStationData;
+    BikeShareLocation *bikeShareLocationInfo = (BikeShareLocation *) self.bikeStationData;
     NSString *stationName = bikeShareLocationInfo.stationName;
     NSNumber *availableBikes = bikeShareLocationInfo.availableBikes;
     NSNumber *availableDocks = bikeShareLocationInfo.availableDocks;
