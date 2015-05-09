@@ -20,10 +20,6 @@
     [super viewDidLoad];
     self.bikeLocationManager = [[BikeShareLocationManager alloc]init];
     
-    // draw the map view onto the the screen
-//    self.mapView = [[MKMapView alloc]initWithFrame:self.view.frame];
-    //NOTE should look into constraing for this view when I draw it
-    
     
     // user location setup
     self.locationManager = [[CLLocationManager alloc]init];
