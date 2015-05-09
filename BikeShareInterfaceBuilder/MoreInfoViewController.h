@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "BikeShareLocation.h"
 
-@interface MoreInfoViewController : UITabBarController
+@interface MoreInfoViewController : UIViewController
 @property (strong, nonatomic) id<MKAnnotation> bikeStationData;
 @property (strong, nonatomic) NSString *string;
 @property (strong, nonatomic) IBOutlet UILabel *moreInformationLabel;
