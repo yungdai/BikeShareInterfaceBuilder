@@ -45,8 +45,15 @@
     NSNumber *availableDocks = bikeShareLocationInfo.availableDocks;
     NSNumber *availableBikes = bikeShareLocationInfo.availableBikes;
     NSNumber *totalDocks = bikeShareLocationInfo.totalDocks;
-    self.moreInformationLabel.text = [NSString stringWithFormat:
-                                      @"Bike Station Name: %@\nAvailable Bikes: %@\nAvailable Docks: %@\nTotalDocks: %@", stationName, availableBikes, availableDocks, totalDocks];
+    self.stationName.text = [NSString stringWithFormat:
+                                      @"Bike Station Name: %@", stationName];
+    
+    self.availableBikes.text = [NSString stringWithFormat:
+                                      @"Available Bikes: %@", availableBikes];
+    self.availableDocks.text = [NSString stringWithFormat:
+                                      @"Available Docks: %@",availableDocks];
+    self.totalDocks.text = [NSString stringWithFormat:
+                                      @"TotalDocks: %@", totalDocks];
     //    self.moreInformationLabel.text = labelText;
 }
 

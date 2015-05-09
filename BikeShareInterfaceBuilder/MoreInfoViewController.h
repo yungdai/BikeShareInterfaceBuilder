@@ -15,5 +15,9 @@
 @property (strong, nonatomic) id<MKAnnotation> bikeStationData;
 @property (strong, nonatomic) NSString *string;
 @property (strong, nonatomic) IBOutlet UILabel *moreInformationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *stationName;
+@property (strong, nonatomic) IBOutlet UILabel *availableBikes;
+@property (strong, nonatomic) IBOutlet UILabel *availableDocks;
+@property (strong, nonatomic) IBOutlet UILabel *totalDocks;
 
 @end
