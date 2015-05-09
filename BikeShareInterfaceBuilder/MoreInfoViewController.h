@@ -9,7 +9,14 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "BikeShareLocation.h"
+#import "BikeShareLocationManager.h"
+#import "HTTPCommunication.h"
+#import "MoreInfoViewController.h"
+
+// check to see if the iOS is 8.0 or higher
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface MoreInfoViewController : UIViewController
 @property (strong, nonatomic) id<MKAnnotation> bikeStationData;
@@ -19,5 +26,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *availableBikes;
 @property (strong, nonatomic) IBOutlet UILabel *availableDocks;
 @property (strong, nonatomic) IBOutlet UILabel *totalDocks;
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) BikeShareLocationManager *bikeLocationManager;
+@property (strong, nonatomic) IBOutlet UIButton *guideMeButton;
 
 @end

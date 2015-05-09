@@ -13,21 +13,7 @@
 @end
 
 @implementation MapViewController
-{
-    NSDictionary *mapLaunchOptions;
-    
-}
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-        // sety the default mapping launch option as walking instead of driving
-        mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
-    }
-    return self;
-}
 
 
 - (void)viewDidLoad {
@@ -150,8 +136,11 @@
             bikeShareAnnotation.frame = CGRectMake(0, 0, 45, 30);
             // Add an image to the left callout.
             UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Bike_Share_Toronto_logo"]];
-            iconView.frame = CGRectMake(0, 0, 45, 30);
+            iconView.frame = CGRectMake(0, 0, 75, 55);
+
             bikeShareAnnotation.leftCalloutAccessoryView = iconView;
+            bikeShareAnnotation.leftCalloutAccessoryView.backgroundColor = [UIColor greenColor];
+    
             
             // on the right of my Callout display a UIButton I want a UIButtonTypeDetailDisclosure type
             bikeShareAnnotation.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -175,6 +164,7 @@
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem *mapitem = [[MKMapItem alloc] initWithPlacemark:placemark];
     mapitem.name = annotation.title;
+    NSDictionary *mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
     [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }
 
