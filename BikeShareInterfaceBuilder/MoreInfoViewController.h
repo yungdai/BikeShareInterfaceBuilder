@@ -27,9 +27,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *availableDocks;
 @property (strong, nonatomic) IBOutlet UILabel *totalDocks;
 
+
+// map properties
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) BikeShareLocationManager *bikeLocationManager;
 @property (strong, nonatomic) IBOutlet UIButton *guideMeButton;
+@property MKRoute *routeToStation;
+
 
 @end

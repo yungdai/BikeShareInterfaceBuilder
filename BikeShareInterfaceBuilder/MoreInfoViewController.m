@@ -36,10 +36,9 @@
     
     [self.locationManager startUpdatingLocation];
     
-    
+    // set the annotation for the specific Bike Station selected
     [self.mapView addAnnotation:self.bikeStationData];
-    //  plot the location of all the bikeShareLocations
-
+    
     
  
     // sets the view controller to be the delegate for the MapView
@@ -52,7 +51,7 @@
     
 }
 
-// method to set custom annotation images
+// method to set custom annotation settings
 // Tells the delegate that one or more annotation views were added to the map.
 // By the time this method is called EACH time an annocation is created
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -82,11 +81,43 @@
             UITapGestureRecognizer *tapLeftCallOut = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnImageView:)];
             [bikeShareAnnotation.leftCalloutAccessoryView addGestureRecognizer:tapLeftCallOut];
             iconView.userInteractionEnabled = YES;
+            
+            
+            // show on the map route to the bike station
+            [mapView removeOverlay:self.routeToStation.polyline];
+            CLLocationCoordinate2D coordinate = [annotation coordinate];
+            MKPlacemark *placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
+            MKMapItem *bikeStationLocation = [[MKMapItem alloc] initWithPlacemark:placemark];
+            MKDirectionsRequest *routeToBikeStation = [[MKDirectionsRequest alloc]init];
+            [routeToBikeStation setSource:[MKMapItem mapItemForCurrentLocation]];
+            [routeToBikeStation setDestination:[[MKMapItem alloc]initWithPlacemark:placemark]];
+            MKDirections *directions = [[MKDirections alloc]initWithRequest:routeToBikeStation];
+            [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+                if (error)
+                {
+                    NSLog(@"There was an error: %@", error.description);
+                } else {
+                    self.routeToStation = response.routes.lastObject;
+                    [mapView addOverlay:self.routeToStation.polyline];
+                }
+            }];
+            bikeStationLocation.name = annotation.title;
+            
+            
         }
     }
     return bikeShareAnnotation;
 }
 
+
+// this method is setup the router map overlay
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer *routeLine = [[MKPolylineRenderer alloc]initWithPolyline:self.routeToStation.polyline];
+    routeLine.strokeColor = [UIColor greenColor];
+    routeLine.lineWidth = 6;
+    return routeLine;
+}
+// method for when you tap on the callout
 - (void)didTapOnImageView:(id)sender
 {
     id <MKAnnotation> annotation = [self.mapView selectedAnnotations][0];
@@ -98,7 +129,7 @@
     [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }
 
-
+// this is the More Info View screen layout
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -117,7 +148,10 @@
                                       @"Available Docks: %@",availableDocks];
     self.totalDocks.text = [NSString stringWithFormat:
                                       @"TotalDocks: %@", totalDocks];
+    
+    
 }
+
 
 
 

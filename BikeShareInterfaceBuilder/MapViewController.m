@@ -78,7 +78,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    
+    [mapView removeOverlay:self.routeToStation.polyline];
     id <MKAnnotation> annotation = view.annotation;
     CLLocationCoordinate2D coordinate = [annotation coordinate];
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
@@ -118,6 +118,39 @@
     }
 }
 
+// when you select a station it will route a green line to that station
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    
+    [mapView removeOverlay:self.routeToStation.polyline];
+    id <MKAnnotation> annotation = view.annotation;
+    CLLocationCoordinate2D coordinate = [annotation coordinate];
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+    MKMapItem *bikeStationLocation = [[MKMapItem alloc] initWithPlacemark:placemark];
+    MKDirectionsRequest *routeToBikeStation = [[MKDirectionsRequest alloc]init];
+    [routeToBikeStation setSource:[MKMapItem mapItemForCurrentLocation]];
+    [routeToBikeStation setDestination:[[MKMapItem alloc]initWithPlacemark:placemark]];
+    MKDirections *directions = [[MKDirections alloc]initWithRequest:routeToBikeStation];
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        if (error)
+        {
+            NSLog(@"There was an error: %@", error.description);
+        } else {
+            self.routeToStation = response.routes.lastObject;
+            [mapView addOverlay:self.routeToStation.polyline];
+        }
+    }];
+    bikeStationLocation.name = annotation.title;
+    
+}
+
+// this method is setup the render to render the map overlay
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer *routeLine = [[MKPolylineRenderer alloc]initWithPolyline:self.routeToStation.polyline];
+    routeLine.strokeColor = [UIColor greenColor];
+    routeLine.lineWidth = 6;
+    return routeLine;
+}
 
 
 // method to set custom annotation images

@@ -22,5 +22,5 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) BikeShareLocationManager *bikeLocationManager;
-
+@property MKRoute *routeToStation;
 @end

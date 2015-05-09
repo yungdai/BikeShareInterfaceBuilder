@@ -48,9 +48,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PG6-Ju-YrU">
-                                <rect key="frame" x="0.0" y="330" width="600" height="171"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-ju-tQm">
                                 <rect key="frame" x="0.0" y="509" width="600" height="34"/>
                                 <state key="normal" title="Guide Me">
@@ -60,6 +57,9 @@
                                     <action selector="guideMeButtonPressed:" destination="yFr-ff-jAv" eventType="touchUpInside" id="2sW-0p-c33"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PG6-Ju-YrU">
+                                <rect key="frame" x="0.0" y="343" width="600" height="171"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -68,6 +68,7 @@
                             <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="9Y4-jt-3Sk"/>
                             <constraint firstItem="18m-aj-1hD" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="GfY-kM-mWU"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="MuR-f9-5Hd"/>
+                            <constraint firstItem="PG6-Ju-YrU" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="TFn-82-hEK"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="U57-qp-rIm"/>
                             <constraint firstItem="ki2-ju-tQm" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="YLp-In-gxP"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="ZXa-nd-26B"/>
@@ -85,6 +86,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ki2-ju-tQm" secondAttribute="trailing" constant="-16" id="twI-nC-6c2"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="uYI-hp-sGq"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="wjq-9B-VUf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PG6-Ju-YrU" secondAttribute="trailing" constant="-16" id="xNg-2L-Bb3"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="zhk-42-FIn"/>
                         </constraints>
                     </view>
