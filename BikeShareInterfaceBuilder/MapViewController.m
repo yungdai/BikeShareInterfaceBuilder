@@ -89,7 +89,10 @@
     
 }
 
+// look at this example http://stackoverflow.com/questions/14061265/list-of-closest-annotations-in-mapkit
+
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    
 //    BikeShareLocation *bikeShareLocation = [[BikeShareLocation alloc]init];
 //    self.currentLocation = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
 //    
