@@ -93,8 +93,8 @@
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
 //    
-//    self.currentLocation = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
 //    
+//    self.currentLocation = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
 //    [self.bikeLocationManager getBikeShareLocationsOnSucess:^(NSArray *locations) {
 //        
 //        [self.sortedBikeStations addObjectsFromArray:locations];
@@ -103,7 +103,7 @@
 //        {
 //            for (int i = 0; i < self.sortedBikeStations.count; i++) {
 //                bikeShareLocation = [self.sortedBikeStations objectAtIndex:i];
-//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.biekShareLocation];
+//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.bikeShareLocation];
 //            }
 //            [self.mapView addAnnotation:location];
 //        }
