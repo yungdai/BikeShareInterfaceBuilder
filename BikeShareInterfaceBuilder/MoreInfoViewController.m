@@ -23,7 +23,6 @@
     self.locationManager = [[CLLocationManager alloc]init];
     
     // make sure that the user is using iOS 8 or later
-    
     if(IS_OS_8_OR_LATER) {
         [self.locationManager requestWhenInUseAuthorization];
         [self.locationManager requestAlwaysAuthorization];
@@ -39,15 +38,9 @@
     // set the annotation for the specific Bike Station selected
     [self.mapView addAnnotation:self.bikeStationData];
     
-    
- 
     // sets the view controller to be the delegate for the MapView
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
-    
-    
-    
-
     
 }
 
@@ -157,7 +150,7 @@
 
 
 
-
+// method for pressing the guideMeButton
 - (IBAction)guideMeButtonPressed:(id)sender {
     
     id <MKAnnotation> annotation = self.bikeStationData;
@@ -192,14 +185,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
