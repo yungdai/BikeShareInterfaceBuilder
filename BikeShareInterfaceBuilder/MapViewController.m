@@ -10,11 +10,10 @@
 
 @interface MapViewController ()
 
+
 @end
 
 @implementation MapViewController
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +45,7 @@
         }
         
     }];
+    
     
     [self.locationManager startUpdatingLocation];
 
@@ -81,13 +81,31 @@
         moreInfoViewController.bikeStationData = annotation;
         moreInfoViewController.string = annotation.title;
         
-        
         [self.tabBarController setSelectedIndex:1];
         
         
         
     }
     
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+//    BikeShareLocation *bikeShareLocation = [[BikeShareLocation alloc]init];
+//    self.currentLocation = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude longitude:userLocation.coordinate.longitude];
+//    
+//    [self.bikeLocationManager getBikeShareLocationsOnSucess:^(NSArray *locations) {
+//        BikeShareLocation *bikeShareLocation = [[BikeShareLocation alloc]init];
+//        for (BikeShareLocation *location in locations)
+//        {
+//            for (int i = 0; i < locations.count; i++) {
+//                bikeShareLocation = [locations objectAtIndex:i];
+//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.bikeSharelocation];
+//            }
+//            [self.mapView addAnnotation:location];
+//        }
+//        NSSortDescriptor *sorter = [[NSSortDescriptor alloc]initWithKey:@"distanceFromUser" ascending:YES];
+//        [locations sortedArrayUsingSelector:sorter];
+//    }];
 }
 
 // method to zoom to the current user location
@@ -189,5 +207,7 @@
     NSDictionary *mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
     [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }
+
+
 
 @end

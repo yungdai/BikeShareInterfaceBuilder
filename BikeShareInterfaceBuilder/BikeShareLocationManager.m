@@ -28,8 +28,8 @@
     [_http retrieve:url successBlock:^(NSData * response) {
         NSError *error  = nil;
         NSDictionary *data = [NSJSONSerialization JSONObjectWithData:response options:0 error:&error];
-        NSLog(@"%@", response);
-        NSLog(@"%@",data);
+//        NSLog(@"%@", response);
+//        NSLog(@"%@",data);
         
         
         //  if there are no errors inside the data dictionary
@@ -49,6 +49,8 @@
                 NSNumber *latitude = results[@"latitude"];
                 NSNumber *longitude = results[@"longitude"];
                 bikeShareLocation.coordinate = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
+                bikeShareLocation.bikeSharelocation = [[CLLocation alloc]initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+
                 
                 // additional location information
                 bikeShareLocation.totalDocks = results[@"totalDocks"];
