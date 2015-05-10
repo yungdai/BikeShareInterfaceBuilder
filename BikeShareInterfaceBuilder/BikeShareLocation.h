@@ -28,6 +28,6 @@
 
 // will store the distance of the station from the user
 @property (nonatomic, readwrite) CLLocationDistance *distanceFromUser;
-@property (nonatomic, readwrite) CLLocation* location;
+@property (nonatomic, readwrite) CLLocation* bikeShareLocation;
 
 @end

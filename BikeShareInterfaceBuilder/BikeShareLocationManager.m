@@ -49,7 +49,7 @@
                 NSNumber *latitude = results[@"latitude"];
                 NSNumber *longitude = results[@"longitude"];
                 bikeShareLocation.coordinate = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
-                bikeShareLocation.bikeSharelocation = [[CLLocation alloc]initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+                bikeShareLocation.bikeShareLocation = [[CLLocation alloc]initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
 
                 
                 // additional location information

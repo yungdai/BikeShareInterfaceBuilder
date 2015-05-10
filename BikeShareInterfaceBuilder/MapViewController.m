@@ -103,7 +103,7 @@
 //        {
 //            for (int i = 0; i < self.sortedBikeStations.count; i++) {
 //                bikeShareLocation = [self.sortedBikeStations objectAtIndex:i];
-//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.location];
+//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.biekShareLocation];
 //            }
 //            [self.mapView addAnnotation:location];
 //        }
