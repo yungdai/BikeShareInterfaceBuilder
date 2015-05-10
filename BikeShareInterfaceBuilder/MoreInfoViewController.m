@@ -110,7 +110,8 @@
 // this method is setup the router map overlay
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
     MKPolylineRenderer *routeLine = [[MKPolylineRenderer alloc]initWithPolyline:self.routeToStation.polyline];
-    routeLine.strokeColor = [UIColor blueColor];
+    UIColor *routeLineColour = [[UIColor alloc]initWithRed:0 green:0 blue:5 alpha:.5];
+    routeLine.strokeColor = routeLineColour;
     routeLine.lineWidth = 6;
     return routeLine;
 }

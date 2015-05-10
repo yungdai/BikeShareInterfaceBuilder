@@ -127,7 +127,7 @@
     }
 }
 
-// when you select a station it will route a green line to that station
+// when you select a station it will route a line to that station
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     
     
@@ -156,7 +156,8 @@
 // this method is setup the render to render the map overlay
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
     MKPolylineRenderer *routeLine = [[MKPolylineRenderer alloc]initWithPolyline:self.routeToStation.polyline];
-    routeLine.strokeColor = [UIColor blueColor];
+    UIColor *routeLineColour = [[UIColor alloc]initWithRed:0 green:0 blue:5 alpha:.5];
+    routeLine.strokeColor = routeLineColour;
     routeLine.lineWidth = 6;
     return routeLine;
 }
@@ -198,7 +199,7 @@
 }
 
 
-//
+// method to define what happens when you tap on the image, this is connected to the gesture
 - (void)didTapOnImageView:(id)sender
 {
     id <MKAnnotation> annotation = [self.mapView selectedAnnotations][0];
