@@ -41,15 +41,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bike Station Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-HP-XZS">
-                                <rect key="frame" x="0.0" y="20" width="600" height="87"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-ju-tQm">
                                 <rect key="frame" x="0.0" y="509" width="600" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Guide Me">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -60,39 +54,46 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PG6-Ju-YrU">
                                 <rect key="frame" x="0.0" y="343" width="600" height="171"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bike Station Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-HP-XZS">
+                                <rect key="frame" x="0.0" y="20" width="600" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aJm-HP-XZS" firstAttribute="top" secondItem="QZ2-dr-ynt" secondAttribute="bottom" id="2cU-5M-UW6"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="8mi-Fz-Xpm"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="9Y4-jt-3Sk"/>
                             <constraint firstItem="18m-aj-1hD" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="GfY-kM-mWU"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="IIz-de-iTy"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="MuR-f9-5Hd"/>
                             <constraint firstItem="PG6-Ju-YrU" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="TFn-82-hEK"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="U57-qp-rIm"/>
                             <constraint firstItem="ki2-ju-tQm" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="YLp-In-gxP"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="ZXa-nd-26B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aJm-HP-XZS" secondAttribute="trailing" constant="-16" id="aXw-oh-hA7"/>
+                            <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="aqO-Wx-C4a"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="bXw-Xs-Qw7"/>
                             <constraint firstItem="aJm-HP-XZS" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="bgG-vu-Rll"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="c8C-zB-Ngi"/>
                             <constraint firstItem="18m-aj-1hD" firstAttribute="top" secondItem="aJm-HP-XZS" secondAttribute="bottom" constant="50" id="hjz-dz-PfT"/>
                             <constraint firstItem="18m-aj-1hD" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="psv-c2-IgG"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="qSv-CC-kzZ"/>
                             <constraint firstItem="aJm-HP-XZS" firstAttribute="top" secondItem="QZ2-dr-ynt" secondAttribute="bottom" id="qlE-zd-4Xv"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="rGM-2M-t5R"/>
                             <constraint firstItem="ki2-ju-tQm" firstAttribute="top" secondItem="PG6-Ju-YrU" secondAttribute="bottom" id="reg-tu-IHC"/>
                             <constraint firstItem="KsI-Hw-Azc" firstAttribute="top" secondItem="ki2-ju-tQm" secondAttribute="bottom" constant="8" id="sUK-5w-jkx"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="t5c-Ro-9ZO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ki2-ju-tQm" secondAttribute="trailing" constant="-16" id="twI-nC-6c2"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="uYI-hp-sGq"/>
                             <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="wjq-9B-VUf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PG6-Ju-YrU" secondAttribute="trailing" constant="-16" id="xNg-2L-Bb3"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="zVl-gr-iQ3"/>
                             <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="zhk-42-FIn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="More Info" image="info" id="yng-st-dC9"/>
                     <connections>
-                        <outlet property="availableBikes" destination="Axy-rs-rmX" id="M9b-0k-kpx"/>
+                        <outlet property="availableBikes" destination="CV0-26-gbz" id="oGY-fy-AKQ"/>
                         <outlet property="availableDocks" destination="Axy-rs-rmX" id="c7n-fi-hYb"/>
                         <outlet property="guideMeButton" destination="ki2-ju-tQm" id="Nlq-my-Wup"/>
                         <outlet property="mapView" destination="PG6-Ju-YrU" id="6ma-mM-xAF"/>

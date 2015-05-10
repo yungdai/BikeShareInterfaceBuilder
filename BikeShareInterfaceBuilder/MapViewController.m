@@ -48,16 +48,7 @@
     }];
     
     [self.locationManager startUpdatingLocation];
-    
-    
-    
-    self.mapView.showsUserLocation = YES;
-    self.mapView.showsPointsOfInterest = YES;
-    
-    
-    
-    
-    
+
     // sets the view controller to be the delegate for the MapView
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
@@ -69,8 +60,6 @@
 - (IBAction)closestButtonPressed:(id)sender {
     
 }
-
-
 
 
 // when I tap the callout accessory I launch the maps app for that location
@@ -195,6 +184,8 @@
     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
     MKMapItem *mapitem = [[MKMapItem alloc] initWithPlacemark:placemark];
     mapitem.name = annotation.title;
+    
+
     NSDictionary *mapLaunchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
     [mapitem openInMapsWithLaunchOptions:mapLaunchOptions];
 }

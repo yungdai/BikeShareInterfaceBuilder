@@ -89,9 +89,13 @@
             MKPlacemark *placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
             MKMapItem *bikeStationLocation = [[MKMapItem alloc] initWithPlacemark:placemark];
             MKDirectionsRequest *routeToBikeStation = [[MKDirectionsRequest alloc]init];
+
             [routeToBikeStation setSource:[MKMapItem mapItemForCurrentLocation]];
             [routeToBikeStation setDestination:[[MKMapItem alloc]initWithPlacemark:placemark]];
             MKDirections *directions = [[MKDirections alloc]initWithRequest:routeToBikeStation];
+            
+            // set the route type to be a walking type
+            routeToBikeStation.transportType = MKDirectionsTransportTypeWalking;
             [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
                 if (error)
                 {

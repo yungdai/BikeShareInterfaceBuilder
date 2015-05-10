@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "BikeShareLocation.h"
 #import "BikeShareLocationManager.h"
-#import "HTTPCommunication.h"
 #import "MoreInfoViewController.h"
 
 // check to see if the iOS is 8.0 or higher

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6C59DE00-309B-4A8E-9C89-08E9ADD2E1F9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>BikeShareInterfaceBuilder</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>26C8120F52248A38E40C97401AD917773CEF6EA7</key>
 		<string>https://github.com/yungdai/BikeShareInterfaceBuilder.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BikeShareInterfaceBuilder.xcodeproj/project.xcworkspace</string>
+	<string>BikeShareInterfaceBuilder.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>26C8120F52248A38E40C97401AD917773CEF6EA7</key>
