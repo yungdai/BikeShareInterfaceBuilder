@@ -17,32 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Station Name:" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18m-aj-1hD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station Name:" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18m-aj-1hD">
                                 <rect key="frame" x="16" y="144" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Available Bikes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV0-26-gbz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Bikes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV0-26-gbz">
                                 <rect key="frame" x="16" y="193" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Available Docks:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axy-rs-rmX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Docks:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axy-rs-rmX">
                                 <rect key="frame" x="16" y="242" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total Docks:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lku-mb-JLj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Docks:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lku-mb-JLj">
                                 <rect key="frame" x="16" y="291" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PG6-Ju-YrU">
+                                <rect key="frame" x="0.0" y="320" width="600" height="181"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bike Station Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-HP-XZS">
+                                <rect key="frame" x="0.0" y="20" width="600" height="87"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="F5H-X5-HE0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki2-ju-tQm">
-                                <rect key="frame" x="0.0" y="509" width="600" height="34"/>
+                                <rect key="frame" x="0.0" y="509" width="600" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Guide Me">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,44 +64,36 @@
                                     <action selector="guideMeButtonPressed:" destination="yFr-ff-jAv" eventType="touchUpInside" id="2sW-0p-c33"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PG6-Ju-YrU">
-                                <rect key="frame" x="0.0" y="343" width="600" height="171"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bike Station Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-HP-XZS">
-                                <rect key="frame" x="0.0" y="20" width="600" height="87"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aJm-HP-XZS" firstAttribute="top" secondItem="QZ2-dr-ynt" secondAttribute="bottom" id="2cU-5M-UW6"/>
-                            <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="8mi-Fz-Xpm"/>
-                            <constraint firstItem="18m-aj-1hD" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="GfY-kM-mWU"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="IIz-de-iTy"/>
-                            <constraint firstItem="Axy-rs-rmX" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="MuR-f9-5Hd"/>
-                            <constraint firstItem="PG6-Ju-YrU" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="TFn-82-hEK"/>
-                            <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="U57-qp-rIm"/>
-                            <constraint firstItem="ki2-ju-tQm" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="YLp-In-gxP"/>
-                            <constraint firstItem="lku-mb-JLj" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="ZXa-nd-26B"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aJm-HP-XZS" secondAttribute="trailing" constant="-16" id="aXw-oh-hA7"/>
-                            <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="aqO-Wx-C4a"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="bXw-Xs-Qw7"/>
-                            <constraint firstItem="aJm-HP-XZS" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="bgG-vu-Rll"/>
-                            <constraint firstItem="18m-aj-1hD" firstAttribute="top" secondItem="aJm-HP-XZS" secondAttribute="bottom" constant="50" id="hjz-dz-PfT"/>
-                            <constraint firstItem="18m-aj-1hD" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="psv-c2-IgG"/>
-                            <constraint firstItem="aJm-HP-XZS" firstAttribute="top" secondItem="QZ2-dr-ynt" secondAttribute="bottom" id="qlE-zd-4Xv"/>
-                            <constraint firstItem="lku-mb-JLj" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="rGM-2M-t5R"/>
-                            <constraint firstItem="ki2-ju-tQm" firstAttribute="top" secondItem="PG6-Ju-YrU" secondAttribute="bottom" id="reg-tu-IHC"/>
-                            <constraint firstItem="KsI-Hw-Azc" firstAttribute="top" secondItem="ki2-ju-tQm" secondAttribute="bottom" constant="8" id="sUK-5w-jkx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ki2-ju-tQm" secondAttribute="trailing" constant="-16" id="twI-nC-6c2"/>
-                            <constraint firstItem="Axy-rs-rmX" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="uYI-hp-sGq"/>
-                            <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="wjq-9B-VUf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PG6-Ju-YrU" secondAttribute="trailing" constant="-16" id="xNg-2L-Bb3"/>
-                            <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="zVl-gr-iQ3"/>
-                            <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="zhk-42-FIn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PG6-Ju-YrU" secondAttribute="trailing" constant="-16" id="52Y-wR-xaK"/>
+                            <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="8Fw-u3-i4c"/>
+                            <constraint firstItem="aJm-HP-XZS" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="BZn-za-aoc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aJm-HP-XZS" secondAttribute="trailing" constant="-16" id="CXh-6N-ytV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ki2-ju-tQm" secondAttribute="trailing" constant="-16" id="EMk-By-8kd"/>
+                            <constraint firstItem="18m-aj-1hD" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="IK2-YB-9B2"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="KbO-6j-8ZE"/>
+                            <constraint firstItem="18m-aj-1hD" firstAttribute="top" secondItem="aJm-HP-XZS" secondAttribute="bottom" constant="37" id="LJO-oZ-kG7"/>
+                            <constraint firstItem="PG6-Ju-YrU" firstAttribute="top" secondItem="lku-mb-JLj" secondAttribute="bottom" constant="8" id="LY8-MM-tPn"/>
+                            <constraint firstItem="18m-aj-1hD" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="LaD-fR-mbk"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="Q0L-zh-ZFL"/>
+                            <constraint firstItem="ki2-ju-tQm" firstAttribute="top" secondItem="PG6-Ju-YrU" secondAttribute="bottom" id="Tco-OP-ro2"/>
+                            <constraint firstItem="ki2-ju-tQm" firstAttribute="top" secondItem="PG6-Ju-YrU" secondAttribute="bottom" id="Wiv-4G-riC"/>
+                            <constraint firstItem="ki2-ju-tQm" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="YRO-lv-3zM"/>
+                            <constraint firstItem="aJm-HP-XZS" firstAttribute="top" secondItem="QZ2-dr-ynt" secondAttribute="bottom" id="aHa-zN-lr3"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="b5K-fE-gJZ"/>
+                            <constraint firstItem="PG6-Ju-YrU" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" constant="-16" id="fe5-GX-bS9"/>
+                            <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="hPl-hW-YUr"/>
+                            <constraint firstItem="PG6-Ju-YrU" firstAttribute="top" secondItem="lku-mb-JLj" secondAttribute="bottom" constant="8" id="jms-NR-mhe"/>
+                            <constraint firstItem="lku-mb-JLj" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="nda-6U-N6f"/>
+                            <constraint firstItem="KsI-Hw-Azc" firstAttribute="top" secondItem="ki2-ju-tQm" secondAttribute="bottom" id="q4W-lo-t7e"/>
+                            <constraint firstItem="lku-mb-JLj" firstAttribute="top" secondItem="Axy-rs-rmX" secondAttribute="bottom" constant="28" id="rWC-8O-pQt"/>
+                            <constraint firstItem="lku-mb-JLj" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="tPZ-68-edl"/>
+                            <constraint firstItem="CV0-26-gbz" firstAttribute="top" secondItem="18m-aj-1hD" secondAttribute="bottom" constant="28" id="tQq-al-Osx"/>
+                            <constraint firstItem="Axy-rs-rmX" firstAttribute="trailing" secondItem="XDB-2E-Mrc" secondAttribute="trailingMargin" id="yLH-29-tf0"/>
+                            <constraint firstItem="Axy-rs-rmX" firstAttribute="leading" secondItem="XDB-2E-Mrc" secondAttribute="leadingMargin" id="ytg-3p-YiE"/>
+                            <constraint firstItem="Axy-rs-rmX" firstAttribute="top" secondItem="CV0-26-gbz" secondAttribute="bottom" constant="28" id="zad-Rk-0ww"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="More Info" image="info" id="yng-st-dC9"/>

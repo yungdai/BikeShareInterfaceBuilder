@@ -37,6 +37,7 @@
     
     // set the annotation for the specific Bike Station selected
     [self.mapView addAnnotation:self.bikeStationData];
+
     
     // sets the view controller to be the delegate for the MapView
     self.mapView.delegate = self;
@@ -82,7 +83,6 @@
             MKPlacemark *placemark = [[MKPlacemark alloc]initWithCoordinate:coordinate addressDictionary:nil];
             MKMapItem *bikeStationLocation = [[MKMapItem alloc] initWithPlacemark:placemark];
             MKDirectionsRequest *routeToBikeStation = [[MKDirectionsRequest alloc]init];
-
             [routeToBikeStation setSource:[MKMapItem mapItemForCurrentLocation]];
             [routeToBikeStation setDestination:[[MKMapItem alloc]initWithPlacemark:placemark]];
             MKDirections *directions = [[MKDirections alloc]initWithRequest:routeToBikeStation];
@@ -145,6 +145,8 @@
     self.totalDocks.text = [NSString stringWithFormat:
                                       @"TotalDocks: %@", totalDocks];
     
+    // set the annotation for the specific Bike Station selected
+    [self.mapView addAnnotation:self.bikeStationData];
     
 }
 
