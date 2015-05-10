@@ -23,6 +23,7 @@
 @property MKRoute *routeToStation;
 @property (strong, nonatomic) IBOutlet UIButton *closestButton;
 @property CLLocation *currentLocation;
+@property (strong, nonatomic) NSMutableArray *sortedBikeStations;
 
 
 @end
