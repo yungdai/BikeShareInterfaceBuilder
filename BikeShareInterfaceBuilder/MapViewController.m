@@ -101,9 +101,9 @@
 //        BikeShareLocation *bikeShareLocation = [[BikeShareLocation alloc]init];
 //        for (BikeShareLocation *location in locations)
 //        {
-//            for (int i = 0; i < locations.count; i++) {
+//            for (int i = 0; i < self.sortedBikeStations.count; i++) {
 //                bikeShareLocation = [self.sortedBikeStations objectAtIndex:i];
-//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.bikeSharelocation];
+//                bikeShareLocation.distanceFromUser = [self.currentLocation distanceFromLocation:bikeShareLocation.location];
 //            }
 //            [self.mapView addAnnotation:location];
 //        }
