@@ -75,7 +75,8 @@
     mapitem.name = annotation.title;
     
     if (control == view.rightCalloutAccessoryView) {
-        
+        // clear the map of annotations first before you send the data over.
+
         MoreInfoViewController *moreInfoViewController = self.tabBarController.viewControllers[1];
         
         moreInfoViewController.bikeStationData = annotation;
