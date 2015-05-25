@@ -131,6 +131,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    // remove the annotations first before you redraw the map.
+    [_mapView removeAnnotations:_mapView.annotations];
     // get the bike station BikeStationLocation Object and assigned it the bikeStationData
     BikeShareLocation *bikeShareLocationInfo = (BikeShareLocation *) self.bikeStationData;
     NSString *stationName = bikeShareLocationInfo.stationName;
@@ -147,6 +149,7 @@
                                       @"TotalDocks: %@", totalDocks];
     
     // set the annotation for the specific Bike Station selected
+//    [self.mapView removeAnnotations:self.bikeStationData]
     [self.mapView addAnnotation:self.bikeStationData];
     
 }
@@ -178,7 +181,7 @@
     
     if (mapPoint == mapView.userLocation) {
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mapPoint coordinate] ,700 , 700);
-        [mapView setRegion:region animated:YES];
+        [mapView setRegion:region animated:NO];
     }
 }
 
